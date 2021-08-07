@@ -24,7 +24,7 @@ def ls():
 
 # Change remote dir 
 def cd(dir):
-    ftp.cwd(dir)
+    ftp.cwd(str(dir))
     
     return(ls())
 
