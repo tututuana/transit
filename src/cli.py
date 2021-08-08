@@ -6,6 +6,8 @@ MIT License
 import ftp, sys, getpass, time, ftplib
 from rich import print
 
+showWelcome = True
+
 def ls():
     for item in ftp.ls():
         if len(str(item).split('.png')) > 1:
@@ -34,12 +36,11 @@ def download(filename):
     print(':heavy_check_mark: Done!         ', end='\r')
     print()
 #########################################################
-server = 'test.rebex.net' #input('Server: ')
-
+server = input('Server: ')                # test.rebex.net
 print(':wave: ', end='')
-username = input('Username: ')
+username = input('Username: ')            # demo
 print(':lock: ', end='')
-password = getpass.getpass('Password: ')
+password = getpass.getpass('Password: ')  # password
 
 try:
     ftp.connect(server=server, username=username, password=password)
@@ -48,6 +49,10 @@ except:
     sys.exit()
 
 print(':heavy_check_mark: Connected to the server.')
+
+if showWelcome:
+    print(ftp.welcome())
+
 time.sleep(0.5)
 print()
 
