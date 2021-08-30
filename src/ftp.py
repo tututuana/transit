@@ -14,10 +14,10 @@ def connect(server, username='anonymous', password=''):
 
     return(files)
 
-# server = input("Server: ")
-# username = input("Username: ")
-# password = input("Password: ")
-# connect(server, username, password)
+server = input("Server: ")
+username = input("Username: ")
+password = input("Password: ")
+connect(server, username, password)
 
 # Get welcome message from FTP server
 def welcome():
