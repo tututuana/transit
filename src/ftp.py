@@ -6,11 +6,10 @@ def connect(server, username='anonymous', password=''):
     ftp = FTP(server)
     ftp.login(username, password)
     
+    welcome = ftp.getwelcome()
     files = ftp.nlst()
 
     return(files)
-
-
 
 # Get welcome message from FTP server
 def welcome():
